@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Galaxy System</title>
+    <link rel="stylesheet" href="css/galaxy.css">
+</head>
+<body>
+<!-- Code referencing https://stackoverflow.com/questions/26793247/how-to-overlay-a-div-over-a-canvas-css -->
+<!-- Try to make the text hang over the canvas  -->
+<canvas id="galaxyCanvas"></canvas>
+<!-- This is a blinking text that show user how to use this app    -->
+<div class="blinking-text">Click On The BLACKHOLE</div>
+<button id="generalSearch">GENERAL SEARCH</button>
+<!--  Information board with close button, if the user click on the blackhole then this board will show up  -->
+<div id="infoBoard" class="info-board">
+    <div class="close-button">X</div>
+    <div class="info-content">
+        <h1>Black Hole Names</h1>
+        <ul id="blackholeList"></ul>
+    </div>
+    <div id="searchSection">
+        <input type="text" id="blackholeSearch" placeholder="Search black hole by name">
+        <button id="searchButton">Search</button>
+    </div>
+    <div id="blackholeDetails"></div>
+</div>
+
+<div id="infoBoard2" class="info-board">
+    <div class="close-button2">X</div>
+    <div class="info-content">
+        <h1>Stars Names</h1>
+        <div id="starContainer" class="scrollable-container">
+            <ul id="starList"></ul>
+        </div>
+    </div>
+    <div id="searchSection2">
+        <input type="text" id="starSearch" placeholder="Type in star Name">
+        <button id="searchButton2">Search</button>
+        <button id="addStarButton">Add</button>
+        <button id="deleteStarButton">Delete</button>
+        <button id="updateStarButton">Update</button>
+        <button id="addPlanetButton">Add Planet</button>
+    </div>
+<!--    <div id="starDetails"></div>-->
+</div>
+
+<div id="left-infoBoard" class="left-info-board">
+    <div class="left-close-button">X</div>
+    <div id="starDetails" class="scrollable-container"></div>
+</div>
+
+<div id="bottom-infoBoard" class="bottom-info-board">
+    <div class="bottom-close-button">X</div>
+    <div id="generalDetails"></div>
+    <div style="display: flex; align-items: center;">
+        <div style="margin-right: 10px;">
+            <div>Table name:</div>
+            <select id="table" onchange="updateColumnsAndAttributes()"></select>
+            <div>Columns:</div>
+            <div id="columns" class="checkbox-container"></div>
+            <div>Attribute Names:</div>
+            <div id="query" class="checkbox-container"></div>
+            <div>Target Value:</div>
+            <input type="text" id="params" placeholder="Enter the Target Value">
+            <br>
+            <button id="generalSearch-button">Search</button>
+        </div>
+        <div>
+            <div>Star Name:</div>
+            <input type="text" id="starName" placeholder="Enter the star name">
+            <button id="starSearch-button">Search Star With Planet</button>
+            <br>
+            <div>Planet Name:</div>
+            <input type="text" id="planetName" placeholder="Enter the planet name">
+            <button id="getPlanetInfoButton">Get Planet Info</button>
+            <br>
+            <div>Black Hole Name:</div>
+            <input type="text" id="blackHoleName" placeholder="Enter black hole name">
+            <button id="getBHStarCountButton">Count star number</button>
+            <br>
+            <div>Get stars that have more than # of planets :</div>
+            <input type="number" id="minPlanets" placeholder="Enter the minimum number of planets">
+            <button id="starPlanetCountButton">Get Star Count</button>
+            <div>Minimum Mass:</div>
+            <input type="number" id="minMass" placeholder="Enter the minimum mass">
+            <button id="blackholeAvgDiameterButton">Get Blackhole AVG Diameter</button>
+            <br>
+            <div>Find stars that have all asteroids:</div>
+            <button id="findAsteroidStarButton">Find</button>
+        </div>
+        <div id="userMessage" style="flex-grow: 1; border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
+            <!-- This area will display user messages -->
+            Hello World
+        </div>
+    </div>
+    <br>
+</div>
+
+<script src="js/galaxy.js"></script>
+</body>
+</html>

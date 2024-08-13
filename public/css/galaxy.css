@@ -1,0 +1,200 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000;
+}
+#galaxyCanvas {
+    border: 1px solid #fff;
+    position: relative;
+    top: 0;
+    left: 0;
+    /* width: 100%;
+    height: 100%; */
+}
+
+#generalSearch {
+    position: fixed; /* Fixed positioning relative to the viewport */
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for the width of the element */
+    z-index: 2; /* Ensure it appears above other elements */
+    background: rgba(0, 0, 255, 0.5); /* Optional: background color */
+    color: #fff; /* Optional: text color */
+    border: none; /* Optional: remove border */
+    padding: 10px 20px; /* Optional: padding */
+    border-radius: 5px; /* Optional: rounded corners */
+    font-size: 16px; /* Optional: font size */
+    cursor: pointer; /* Optional: pointer cursor on hover */
+}
+
+
+/* referencing https://stackoverflow.com/questions/16344354/how-to-make-blinking-flashing-text-with-css-3 */
+/* Try to make a blinking-text in the window */
+.blinking-text {
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(180deg, #ffffff, #656565);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: blink 2s infinite, gradient 3s linear infinite;
+}
+@keyframes blink {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.info-board {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 300px;
+    height: 450px;
+    background: rgba(0, 0, 255, 0.5); /* Transparent blue */
+    border: 2px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    z-index: 2;
+    padding: 20px;
+}
+
+
+.left-info-board {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 300px;
+    height: 450px;
+    background: rgba(0, 0, 255, 0.5); /* Transparent blue */
+    border: 2px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    z-index: 2;
+    padding: 20px;
+}
+
+.bottom-info-board {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed positioning relative to the viewport */
+    bottom: 45px; /* Distance from the bottom of the viewport */
+    width: 80%;
+    height: auto;
+    background: rgba(0, 0, 255, 0.5); /* Transparent blue */
+    border: 2px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    z-index: 2;
+    padding: 20px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.close-button2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.left-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.bottom-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: red;
+}
+
+.close-button2:hover {
+    color: red;
+}
+
+.left-close-button:hover {
+    color: red;
+}
+
+.bottom-close-button:hover {
+    color: red;
+}
+
+
+.info-content {
+    margin-top: 30px;
+}
+
+.scrollable-container {
+    max-height: 300px; /* Set the height you want for the scrollable area */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Optional: border for better visibility */
+    padding: 10px; /* Optional: padding inside the container */
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+/* Additional styling for the list */
+#starList {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+#starList li {
+    padding: 5px 0; /* Spacing between list items */
+    border-bottom: 1px solid #eee; /* Optional: border between items */
+}
+
+#userMessage {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: auto;
+}
